@@ -15,7 +15,7 @@ export default function Delete() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/showall")
+      .get("https://informacion-martin-eduardo-rios.vercel.app/showall")
       .then((response) => {
         setInfo(response.data);
         setLoading(false);

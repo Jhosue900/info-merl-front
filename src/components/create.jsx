@@ -400,6 +400,11 @@ export default function CreateInfo() {
               <option value="No Selected">
                 Seleccione El Grado Al Que Va Dirigido
               </option>
+              <option value="Primero">Primero</option>
+              <option value="Segundo">Segundo</option>
+              <option value="Tercero">Tercero</option>
+              <option value="Cuarto">Cuarto</option>
+              <option value="Quinto">Quinto</option>
               <option value="Sexto">Grado 6</option>
               <option value="Septimo">Grado 7</option>
               <option value="Octavo">Grado 8</option>
