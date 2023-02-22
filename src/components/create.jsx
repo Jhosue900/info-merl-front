@@ -134,7 +134,7 @@ export default function CreateInfo() {
             alert("Rellene Los Campos");
             return;
           } else {
-            axios.post("http://localhost:4000/link", infoLink)
+            axios.post("https://info-merl-production.up.railway.app/link", infoLink)
               .then((response) => {
                 if (response.data.status == 200) {
                   alert("Se Publico Correctamente");

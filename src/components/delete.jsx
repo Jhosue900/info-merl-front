@@ -39,7 +39,7 @@ export default function Delete() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
       axios
-        .delete("http://localhost:4000/delete", {
+        .delete("https://info-merl-production.up.railway.app/delete", {
           data: { id, infoType },
         })
         .then((response) => {
