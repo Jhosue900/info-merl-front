@@ -22,10 +22,10 @@ export default function Delete() {
           const sortedInfo = response.data.sort((a, b) => {
             return new Date(b.fecha) - new Date(a.fecha);
           })
-          
-        }
-        setInfo(sortedInfo);
+          setInfo(sortedInfo);
         setLoading(false);
+        }
+        
       })
       .catch((err) => {
         console.log(err.message);
