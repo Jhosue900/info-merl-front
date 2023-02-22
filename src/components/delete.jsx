@@ -1,6 +1,6 @@
 import { useState, React, useEffect } from "react";
 import "../css/delete.css";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Delete() {
@@ -17,23 +17,18 @@ export default function Delete() {
     axios
       .get("https://informacion-martin-eduardo-rios.vercel.app/showall")
       .then((response) => {
-        setInfo(response.data);
+        const sortedInfo = response.data.sort((a, b) => {
+          return new Date(b.fecha) - new Date(a.fecha);
+        });
+        setInfo(sortedInfo);
         setLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
         setLoading(false);
       });
-
-    let sortedInfo = info.sort((a, b) => {
-      return new Date(b.fecha) - new Date(a.fecha);
-    });
-
-    setInfo(sortedInfo);
-    console.log(info);
   }, []); // agrega una dependencia adicional vacía para que useEffect se ejecute solo una vez
 
-  
   const handleDelete = (id, infoType) => {
     if (confirm("¿Está segur@ de que desea eliminar este elemento?")) {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -44,7 +39,7 @@ export default function Delete() {
         })
         .then((response) => {
           if (response.data.status === 200) {
-            alert("Se elimino correctamente");
+            alert("Se eliminó correctamente");
           }
           // Aquí podrías actualizar el estado de tu componente si fuese necesario
         })
@@ -62,15 +57,11 @@ export default function Delete() {
     }
   };
 
-  
-
-
-  
   return (
     <div className="container">
       <br />
       <br />
-      <h2 className="title">Selecione la tarjeta y eliminela.</h2>
+      <h2 className="title">Seleccione la tarjeta y elimínela.</h2>
       <hr />
       <button className="btn btn-link" onClick={onPress}>
         Regresar
