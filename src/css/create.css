@@ -1,0 +1,25 @@
+#select{
+    width: 81%;
+}
+
+#hr{
+    width: 80%;
+}
+
+#title{
+    width: 81%;
+}
+
+#btn{
+    border-radius: 2px;
+    background-color: black;
+    width: 200px;
+}
+
+#p{
+    margin-left: 50px;
+}
+
+#general{
+    margin-left: 50px;
+}
