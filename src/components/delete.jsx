@@ -17,9 +17,13 @@ export default function Delete() {
     axios
       .get("https://informacion-martin-eduardo-rios.vercel.app/showall")
       .then((response) => {
-        const sortedInfo = response.data.sort((a, b) => {
-          return new Date(b.fecha) - new Date(a.fecha);
-        });
+
+        if (Array.isArray(response.data)) {
+          const sortedInfo = response.data.sort((a, b) => {
+            return new Date(b.fecha) - new Date(a.fecha);
+          })
+          
+        }
         setInfo(sortedInfo);
         setLoading(false);
       })
