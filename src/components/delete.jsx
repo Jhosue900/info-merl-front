@@ -29,31 +29,17 @@ export default function Delete() {
       });
   }, []); // agrega una dependencia adicional vacía para que useEffect se ejecute solo una vez
 
-  const handleDelete = (id, infoType) => {
-    if (confirm("¿Está segur@ de que desea eliminar este elemento?")) {
-      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-      axios
-        .delete("https://info-merl-production.up.railway.app/delete", {
-          data: { id, infoType },
-        })
-        .then((response) => {
-          if (response.data.status === 200) {
-            alert("Se eliminó correctamente");
-          }
-          // Aquí podrías actualizar el estado de tu componente si fuese necesario
-        })
-        .catch((error) => {
-          console.error(
-            "Ocurrió un error al intentar eliminar el elemento:",
-            error
-          );
-        });
-
-      window.scrollTo(0, scrollY);
-      // Refrescar la pantalla
-      location.reload();
-    } else {
+  const handleDelete = async (id, infoType) => {
+    if (confirm("¿Está seguro de que desea eliminar este elemento?")) {
+      try {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        await axios.delete("https://info-merl-production.up.railway.app/delete", { data: { id, infoType } });
+        alert("Se eliminó correctamente");
+        location.reload();
+        window.scrollTo(0, scrollY);
+      } catch (error) {
+        console.error("Ocurrió un error al intentar eliminar el elemento:", error);
+      }
     }
   };
 
