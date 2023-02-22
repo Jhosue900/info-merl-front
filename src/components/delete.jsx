@@ -79,7 +79,7 @@ export default function Delete() {
       <br />
       <br />
       <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {informacion.map((informacion) => {
+        {info.map((informacion) => {
           return informacion.infotype === "Texto" ? (
             <div className="container col">
               <div className="card">
