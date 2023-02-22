@@ -88,7 +88,7 @@ export default function CreateInfo() {
       }
     }
 
-    axios.post("http://localhost:4000/InfoNone", infoNone)
+    axios.post("https://info-merl-production.up.railway.app/InfoNone", infoNone)
       .then((response) => {
         if (response.data.status == 200) {
           alert("Se Publico Correctamente");
@@ -173,7 +173,7 @@ export default function CreateInfo() {
     formData.append('grupo', infoImage.grupo);
     formData.append('info', infoImage.info);
 
-    axios.post('http://localhost:4000/image', formData, {
+    axios.post('https://info-merl-production.up.railway.app/image', formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -213,7 +213,7 @@ export default function CreateInfo() {
     formData.append('grupo', infoVideo.grupo);
     formData.append('info', infoVideo.info);
 
-    axios.post('http://localhost:4000/video', formData, {
+    axios.post('https://info-merl-production.up.railway.app/video', formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -253,7 +253,7 @@ export default function CreateInfo() {
     formData.append('grupo', infoPDF.grupo);
     formData.append('info', infoPDF.info);
 
-    axios.post('http://localhost:4000/pdf', formData, {
+    axios.post('https://info-merl-production.up.railway.app/pdf', formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
@@ -294,7 +294,7 @@ export default function CreateInfo() {
     formData.append('grupo', infoAudio.grupo);
     formData.append('info', infoAudio.info);
 
-    axios.post('http://localhost:4000/audio', formData, {
+    axios.post('https://info-merl-production.up.railway.app/audio', formData, {
         headers: {
             'Content-Type': 'multipart/form-data'
         }
