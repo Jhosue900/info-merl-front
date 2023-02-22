@@ -121,9 +121,9 @@ export default function Delete() {
                         <div>
                           <center>
                             <img
-                              src={`http://localhost:4000/uploads/images/${informacion.images[0].filename}`}
+                              src={`https://info-merl-production.up.railway.app/uploads/images/${informacion.images[0].filename}`}
                               className={`card-img-top`}
-                              onClick={() => {window.open(`http://localhost:4000/uploads/images/${informacion.images[0].filename}`)}}
+                              onClick={() => {window.open(`https://info-merl-production.up.railway.app/uploads/images/${informacion.images[0].filename}`)}}
                             />
                           </center>
 
@@ -206,7 +206,7 @@ export default function Delete() {
                     return (
                       <>
                         <video
-                          src={`http://localhost:4000/uploads/videos/${informacion.video[0].filename}`}
+                          src={`https://info-merl-production.up.railway.app/uploads/videos/${informacion.video[0].filename}`}
                           className="card-img-top"
                           type="video/mp4"
                           controls
@@ -264,7 +264,7 @@ export default function Delete() {
                         <a
                           className="btn btn-success deletebutton"
                           download={`${informacion.pdf[0].filename}.pdf`}
-                          href={`http://localhost:4000/uploads/pdf/${informacion.pdf[0].filename}`}
+                          href={`https://info-merl-production.up.railway.app/uploads/pdf/${informacion.pdf[0].filename}`}
                           target="_blank"
                         >
                           Descargar Archivo
@@ -290,7 +290,7 @@ export default function Delete() {
                       <>
                         <br />
                         <audio
-                          src={`http://localhost:4000/uploads/audio/${informacion.audio[0].filename}`}
+                          src={`https://info-merl-production.up.railway.app/uploads/audio/${informacion.audio[0].filename}`}
                           className="card-img-top"
                           type="audio/mpeg"
                           controls
