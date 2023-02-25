@@ -22,6 +22,9 @@ export default function All() {
         });
         setInfo(sortedInfo);
         setLoading(false);
+
+
+        console.log(response)
       })
       .catch((err) => {
         console.log(err.message);
