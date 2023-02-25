@@ -17,6 +17,7 @@ export default function Delete() {
     axios
       .get("https://informacion-martin-eduardo-rios.vercel.app/showall")
       .then((response) => {
+        console.log(response);
 
         if (Array.isArray(response.data)) {
           const sortedInfo = response.data.sort((a, b) => {
@@ -27,6 +28,10 @@ export default function Delete() {
         }
         
       })
+
+
+
+      
       .catch((err) => {
         console.log(err.message);
         setLoading(false);
