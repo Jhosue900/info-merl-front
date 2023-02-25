@@ -26,9 +26,6 @@ export default function Delete() {
         setLoading(false);
       })
 
-
-
-      
       .catch((err) => {
         console.log(err.message);
         setLoading(false);
@@ -38,13 +35,20 @@ export default function Delete() {
   const handleDelete = async (id, infoType) => {
     if (confirm("¿Está seguro de que desea eliminar este elemento?")) {
       try {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        await axios.delete("https://info-merl-production.up.railway.app/delete", { data: { id, infoType } });
+        const scrollY =
+          window.pageYOffset || document.documentElement.scrollTop;
+        await axios.delete(
+          "https://info-merl-production.up.railway.app/delete",
+          { data: { id, infoType } }
+        );
         alert("Se eliminó correctamente");
         location.reload();
         window.scrollTo(0, scrollY);
       } catch (error) {
-        console.error("Ocurrió un error al intentar eliminar el elemento:", error);
+        console.error(
+          "Ocurrió un error al intentar eliminar el elemento:",
+          error
+        );
       }
     }
   };
@@ -106,7 +110,11 @@ export default function Delete() {
                             <img
                               src={`https://info-merl-production.up.railway.app/uploads/images/${informacion.images[0].filename}`}
                               className={`card-img-top`}
-                              onClick={() => {window.open(`https://info-merl-production.up.railway.app/uploads/images/${informacion.images[0].filename}`)}}
+                              onClick={() => {
+                                window.open(
+                                  `https://info-merl-production.up.railway.app/uploads/images/${informacion.images[0].filename}`
+                                );
+                              }}
                             />
                           </center>
 
@@ -217,8 +225,16 @@ export default function Delete() {
                     <h6 className="fst-italic">{informacion.fecha}</h6>
                     <br />
                   </p>
+                  <br />
 
-                  
+                  <button
+                    className="btn btn-danger deletebutton"
+                    onClick={() =>
+                      handleDelete(informacion.id, informacion.infotype)
+                    }
+                  >
+                    Eliminar
+                  </button>
                 </div>
               </div>
               <br />
@@ -259,7 +275,14 @@ export default function Delete() {
                     );
                   })}
 
-                  
+                  <button
+                    className="btn btn-danger deletebutton"
+                    onClick={() =>
+                      handleDelete(informacion.id, informacion.infotype)
+                    }
+                  >
+                    Eliminar
+                  </button>
                 </div>
               </div>
               <br />
