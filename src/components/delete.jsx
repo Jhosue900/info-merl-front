@@ -61,11 +61,11 @@ export default function Delete() {
       <br />
       <br />
       <br />
-      <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div className="row row-cols-1 row-cols-md-3 row-cols-md-2 row-cols-lg-3 g-4">
         {info.map((informacion) => {
           return informacion.infotype === "Texto" ? (
             <div className="container col">
-              <div className="card">
+              <div className="card h-100">
                 <div className="card-body">
                   <h5 className="card-title"> {informacion.title} </h5>
                   <hr />
@@ -96,7 +96,7 @@ export default function Delete() {
             </div>
           ) : informacion.infotype === "Imagen" ? (
             <div className="container col">
-              <div className="card">
+              <div className="card h-100">
                 <div>
                   {informacion.images.map((infoImage) => {
                     return (
@@ -146,7 +146,7 @@ export default function Delete() {
             </div>
           ) : informacion.infotype === "Link" ? (
             <div className="container col">
-              <div className="card">
+              <div className="card h-100">
                 <div className="card-body">
                   <h5 className="card-title"> {informacion.title} </h5>
                   <hr />
@@ -183,7 +183,7 @@ export default function Delete() {
             </div>
           ) : informacion.infotype === "Video" ? (
             <div className="container col">
-              <div className="card">
+              <div className="card h-100">
                 <div>
                   {informacion.video.map((infoImage) => {
                     return (
@@ -225,7 +225,7 @@ export default function Delete() {
             </div>
           ) : informacion.infotype === "PDF" ? (
             <div className="container col">
-              <div className="card">
+              <div className="card h-100">
                 <div></div>
 
                 <div className="card-body">
@@ -266,7 +266,7 @@ export default function Delete() {
             </div>
           ) : informacion.infotype === "Audio" ? (
             <div className="container col">
-              <div className="card">
+              <div className="card h-100">
                 <div>
                   {informacion.audio.map((infoImage) => {
                     return (
