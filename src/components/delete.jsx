@@ -15,18 +15,15 @@ export default function Delete() {
 
   useEffect(() => {
     axios
-      .get("https://informacion-martin-eduardo-rios.vercel.app/showall")
+      .get("https://info-merl-production.up.railway.app/showall")
       .then((response) => {
         console.log(response);
 
-        if (Array.isArray(response.data)) {
-          const sortedInfo = response.data.sort((a, b) => {
-            return new Date(b.fecha) - new Date(a.fecha);
-          })
-          setInfo(sortedInfo);
+        let sortedInfo = response.data.sort((a, b) => {
+          return new Date(b.fecha) - new Date(a.fecha);
+        });
+        setInfo(sortedInfo);
         setLoading(false);
-        }
-        
       })
 
 
